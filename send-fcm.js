@@ -40,7 +40,9 @@ try {
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 
 // Endpoint para enviar notificación FCM a todos los dispositivos registrados
 app.post('/api/send-fcm', async (req, res) => {
